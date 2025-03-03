@@ -37,7 +37,7 @@ int main() {
     }
     //cout << "Result: ";// <<// result << endl;
     
-    
+    system("pause");
     return 0;
 }
  
