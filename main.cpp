@@ -6,33 +6,36 @@ int main() {
     double num1, num2;
     char operation;
 
-    cout << "Enter first number: ";
+    cout << "Leon's Simple Calculator" << endl;
+
+    cout << "Give me a number: ";
     cin >> num1;
     cout << "Enter an operator (+, -, *, /): ";
     cin >> operation;
-    cout << "Enter second number: ";
+    cout << "Give me another number: ";
     cin >> num2;
+
     double result;
 
     switch(operation) {
         case '+':
-            cout << num1 << " + " << num2 << " = " << num1 + num2;
+            cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
             break;
         case '-':
-            cout << num1 << " - " << num2 << " = " << num1 - num2;
+            cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
             break;
         case '*':
-            cout << num1 << " * " << num2 << " = " << num1 * num2;
+            cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
             break;
         case '/':
-            cout << num1 << " / " << num2 << " = " << num1 / num2;
+            cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
             break;
         default:
             // operator is doesn't match any case constant (+, -, *, /)
-            cout << "Error! The operator is not correct";
+            cout << "Error! wrong operator";
             break;
     }
-    cout << "Result: " << result << endl;
+    //cout << "Result: ";// <<// result << endl;
     
     
     return 0;
