@@ -92,9 +92,9 @@ int displayHeight = height / 8;
     for (int i = 0; i < 16; i++) {
         SendMessage(hButtons[i], WM_SETFONT, (WPARAM)buttonFont, TRUE);
     }
-// ✅ Clear the entire window when resizing
+
     RedrawWindow(hwnd, NULL, NULL, RDW_INVALIDATE | RDW_ERASE | RDW_ALLCHILDREN | RDW_UPDATENOW);
-// ✅ Scale button font dynamically
+
  // ✅ Scale output text font but prevent it from getting too large
     int maxFontSize = height / 10;  // Set a max font size to prevent overflow
     int outputFontSize = min(static_cast<int>(buttonFontSize * 1.1), maxFontSize);  // Use the smaller value
@@ -110,7 +110,7 @@ case WM_PAINT:
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(hwnd, &ps);
 
-    // ✅ Set custom background color (Change RGB values for different colors)
+    // Set custom background color (Change RGB values for different colors)
     HBRUSH hBrush = CreateSolidBrush(RGB(240, 240, 240));
     FillRect(hdc, &ps.rcPaint, hBrush);
     DeleteObject(hBrush);
@@ -178,12 +178,6 @@ SetWindowText(hDisplay, buffer);
     return 0;
 }
 
-/*HFONT CreateScaledFont(int size) {
-    return CreateFont(size, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE,
-                      DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,
-                      CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY,
-                      DEFAULT_PITCH | FF_SWISS, "Arial");
-}*/
 
 
 // WinMain (entry point for GUI programs)
